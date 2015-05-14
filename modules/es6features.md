@@ -46,7 +46,7 @@ ES6 includes the following new features:
 ### Arrows
 Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both expression and statement bodies.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
 
-```JavaScript
+```javascript
 // Expression bodies
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
@@ -72,7 +72,7 @@ var bob = {
 ### Classes
 ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
 
-```JavaScript
+```javascript
 class SkinnedMesh extends THREE.Mesh {
   constructor(geometry, materials) {
     super(geometry, materials);
@@ -101,7 +101,7 @@ class SkinnedMesh extends THREE.Mesh {
 ### Enhanced Object Literals
 Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
 
-```JavaScript
+```javascript
 var obj = {
     // __proto__
     __proto__: theProtoObj,
@@ -120,7 +120,7 @@ var obj = {
 ### Template Strings
 Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
 
-```JavaScript
+```javascript
 // Basic literal string creation
 `In JavaScript '\n' is a line-feed.`
 
@@ -143,7 +143,7 @@ GET`http://foo.org/bar?a=${a}&b=${b}
 ### Destructuring
 Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
 
-```JavaScript
+```javascript
 // list matching
 var [a, , b] = [1,2,3];
 
@@ -173,21 +173,21 @@ a === 1;
 ### Default + Rest + Spread
 Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
 
-```JavaScript
+```javascript
 function f(x, y=12) {
   // y is 12 if not passed (or passed as undefined)
   return x + y;
 }
 f(3) == 15
 ```
-```JavaScript
+```javascript
 function f(x, ...y) {
   // y is an Array
   return x * y.length;
 }
 f(3, "hello", true) == 6
 ```
-```JavaScript
+```javascript
 function f(x, y, z) {
   return x + y + z;
 }
@@ -199,7 +199,7 @@ f(...[1,2,3]) == 6
 Block-scoped binding constructs.  `let` is the new `var`.  `const` is single-assignment.  Static restrictions prevent use before assignment.
 
 
-```JavaScript
+```javascript
 function f() {
   {
     let x;
@@ -218,7 +218,7 @@ function f() {
 ### Iterators + For..Of
 Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize `for..in` to custom iterator-based iteration with `for..of`.  Don’t require realizing an array, enabling lazy design patterns like LINQ.
 
-```JavaScript
+```javascript
 let fibonacci = {
   [Symbol.iterator]() {
     let pre = 0, cur = 1;
@@ -258,7 +258,7 @@ Generators simplify iterator-authoring using `function*` and `yield`.  A functio
 
 Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
 
-```JavaScript
+```javascript
 var fibonacci = {
   [Symbol.iterator]: function*() {
     var pre = 0, cur = 1;
@@ -291,7 +291,7 @@ interface Generator extends Iterator {
 ### Unicode
 Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
 
-```JavaScript
+```javascript
 // same as ES5.1
 "𠮷".length == 2
 
@@ -313,19 +313,19 @@ for(var c of "𠮷") {
 ### Modules
 Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.
 
-```JavaScript
+```javascript
 // lib/math.js
 export function sum(x, y) {
   return x + y;
 }
 export var pi = 3.141593;
 ```
-```JavaScript
+```javascript
 // app.js
 import * as math from "lib/math";
 alert("2π = " + math.sum(math.pi, math.pi));
 ```
-```JavaScript
+```javascript
 // otherApp.js
 import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
@@ -333,7 +333,7 @@ alert("2π = " + sum(pi, pi));
 
 Some additional features include `export default` and `export *`:
 
-```JavaScript
+```javascript
 // lib/mathplusplus.js
 export * from "lib/math";
 export var e = 2.71828182846;
@@ -341,7 +341,7 @@ export default function(x) {
     return Math.log(x);
 }
 ```
-```JavaScript
+```javascript
 // app.js
 import ln, {pi, e} from "lib/mathplusplus";
 alert("2π = " + ln(e)*pi*2);
@@ -357,7 +357,7 @@ Module loaders support:
 
 The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
 
-```JavaScript
+```javascript
 // Dynamic loading – ‘System’ is default loader
 System.import('lib/math').then(function(m) {
   alert("2π = " + m.sum(m.pi, m.pi));
@@ -377,7 +377,7 @@ System.set('jquery', Module({$: $})); // WARNING: not yet finalized
 ### Map + Set + WeakMap + WeakSet
 Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.
 
-```JavaScript
+```javascript
 // Sets
 var s = new Set();
 s.add("hello").add("goodbye").add("hello");
@@ -404,7 +404,7 @@ ws.add({ data: 42 });
 ### Proxies
 Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.
 
-```JavaScript
+```javascript
 // Proxying a normal object
 var target = {};
 var handler = {
@@ -417,7 +417,7 @@ var p = new Proxy(target, handler);
 p.world === 'Hello, world!';
 ```
 
-```JavaScript
+```javascript
 // Proxying a function object
 var target = function () { return 'I am the target'; };
 var handler = {
@@ -432,7 +432,7 @@ p() === 'I am the proxy';
 
 There are traps available for all of the runtime-level meta-operations:
 
-```JavaScript
+```javascript
 var handler =
 {
   get:...,
@@ -456,7 +456,7 @@ var handler =
 Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
 
 
-```JavaScript
+```javascript
 var MyClass = (function() {
 
   // module scoped symbol
@@ -488,7 +488,7 @@ Object construction for a function named `Ctor` now uses two-phases (both virtua
 
 The known `@@create` symbol is available via `Symbol.create`.  Built-ins now expose their `@@create` explicitly.
 
-```JavaScript
+```javascript
 // Pseudo-code of Array
 class Array {
     constructor(...args) { /* ... */ }
@@ -514,7 +514,7 @@ arr.length == 2
 ### Math + Number + String + Array + Object APIs
 Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
 
-```JavaScript
+```javascript
 Number.EPSILON
 Number.isInteger(Infinity) // false
 Number.isNaN("NaN") // false
@@ -542,7 +542,7 @@ Object.assign(Point, { origin: new Point(0,0) })
 ### Binary and Octal Literals
 Two new numeric literal forms are added for binary (`b`) and octal (`o`).
 
-```JavaScript
+```javascript
 0b111110111 === 503 // true
 0o767 === 503 // true
 ```
@@ -550,7 +550,7 @@ Two new numeric literal forms are added for binary (`b`) and octal (`o`).
 ### Promises
 Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
 
-```JavaScript
+```javascript
 function timeout(duration = 0) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, duration);
@@ -569,14 +569,14 @@ var p = timeout(1000).then(() => {
 ### Reflect API
 Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.
 
-```JavaScript
+```javascript
 // No sample yet
 ```
 
 ### Tail Calls
 Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
 
-```JavaScript
+```javascript
 function factorial(n, acc = 1) {
     'use strict';
     if (n <= 1) return acc;
