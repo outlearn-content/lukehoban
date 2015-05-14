@@ -2,7 +2,7 @@
 name: es6features
 version : "0.1"
 title : "ECMAScript 6 Features"
-description: "Over view of what is new in ECMAScript 6"
+description: "Overview of what is new in ECMAScript 6"
 license : "MIT"
 -->
 
