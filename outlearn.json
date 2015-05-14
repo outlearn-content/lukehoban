@@ -1,0 +1,15 @@
+{
+  "olpVersion" : "0.1",
+
+  "paths" : [
+  ],
+
+  "modules" : [
+    {
+      "olm" : "./modules/es6features.md"
+    }
+  ],
+
+  "assets" : [
+  ]
+}
