@@ -16,6 +16,7 @@ ECMAScript 6, also known as ECMAScript 2015, is the upcoming version of the ECMA
 See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
 
 ES6 includes the following new features:
+
 - arrows
 - classes
 - enhanced object literals
