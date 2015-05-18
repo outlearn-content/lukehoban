@@ -3,6 +3,7 @@ name: selections-for-videojs
 version : "0.1"
 title : "Modules, let and const, destructuring"
 description: "Introduce three new features of ES6"
+freshnessDate : 2015-05-18
 license : "MIT"
 -->
 

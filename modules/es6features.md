@@ -3,6 +3,7 @@ name: es6features
 version : "0.1"
 title : "ECMAScript 6 Features"
 description: "Overview of what is new in ECMAScript 6"
+freshnessDate : 2015-05-18
 license : "MIT"
 -->
 
