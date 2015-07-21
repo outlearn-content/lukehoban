@@ -2,6 +2,16 @@
   "olpVersion" : "0.1",
 
   "paths" : [
+    {
+      "name" : "all-modules",
+      "title" : "All Modules by Luke Hoban",
+      "description" : "See in one place all the modules published by Luke Hoban.",
+      "coverImage" : "https://raw.githubusercontent.com/outlearn-content/assets/master/space.jpg",
+      "privacy" : "public",
+      "pages" : [
+        {"module" : "es6features"}
+      ]
+    }
   ],
 
   "modules" : [
