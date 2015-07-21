@@ -1,10 +1,14 @@
 <!--
-name: es6features
-version : "0.1"
-title : "ECMAScript 6 Features"
-description: "Overview of what is new in ECMAScript 6"
-freshnessDate : 2015-05-18
-license : "MIT"
+{
+"name" : "es6features",
+"version" : "0.1",
+"title" : "ECMAScript 6 Features",
+"description" : "Overview of what is new in ECMAScript 6",
+"homepage" : "https://github.com/lukehoban/es6features",
+"canonicalSource" : "https://github.com/lukehoban/es6features",
+"freshnessDate" : 2015-05-18,
+"license" : "MIT"
+}
 -->
 
 <!-- @section -->

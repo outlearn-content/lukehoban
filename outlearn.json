@@ -5,12 +5,8 @@
   ],
 
   "modules" : [
-    {
-      "olm" : "./modules/es6features.md"
-    },
-    {
-      "olm" : "./modules/selections-for-videojs.md"
-    }
+    {"olm" : "./modules/es6features.md"},
+    {"olm" : "./modules/selections-for-videojs.md"}
   ],
 
   "assets" : [
