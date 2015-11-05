@@ -4,6 +4,7 @@
 "version" : "0.1",
 "title" : "Modules, let and const, destructuring",
 "description" : "Introduce three new features of ES6",
+"author" : "Luke Hoban",
 "homepage" : "https://github.com/lukehoban/es6features",
 "canonicalSource" : "https://github.com/lukehoban/es6features",
 "freshnessDate" : 2015-05-18,

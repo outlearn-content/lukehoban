@@ -4,6 +4,7 @@
 "version" : "0.1",
 "title" : "ECMAScript 6 Features",
 "description" : "Overview of what is new in ECMAScript 6",
+"author" : "Luke Hoban",
 "homepage" : "https://github.com/lukehoban/es6features",
 "canonicalSource" : "https://github.com/lukehoban/es6features",
 "freshnessDate" : 2015-05-18,
@@ -245,7 +246,8 @@ for (var n of fibonacci) {
 ```
 
 Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
-```TypeScript
+
+```javascript
 interface IteratorResult {
   done: boolean;
   value: any;
@@ -353,7 +355,9 @@ alert("2π = " + ln(e)*pi*2);
 ```
 
 ### Module Loaders
+
 Module loaders support:
+
 - Dynamic loading
 - State isolation
 - Global namespace isolation
